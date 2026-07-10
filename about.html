@@ -72,6 +72,53 @@
     .signature { margin-top: 1.4rem; text-align: right; line-height: 1.7; }
     .signature .s-role { font-size: 0.95rem; color: var(--ink-soft); }
     .signature .s-name { font-family: "Noto Serif KR", serif; font-size: 1.2rem; font-weight: 700; }
+
+    /* ---------- 들뫼 헌장 ---------- */
+    .charter-sub { color: var(--ink-soft); font-size: 0.98rem; }
+    .charter-group { margin-top: 1.5rem; }
+    .charter-group > h3 {
+      font-family: "Noto Serif KR", serif;
+      font-size: 1.12rem;
+      color: var(--green-dark);
+      background: var(--head-bg);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0.5rem 0.9rem;
+    }
+    .charter-group .g-note { margin-top: 0.8rem; font-size: 0.96rem; color: var(--ink-soft); }
+    .article {
+      margin-top: 0.9rem;
+      background: var(--body-bg);
+      border: 1px solid #d5dccb;
+      border-left: 4px solid var(--green);
+      border-radius: 8px;
+      padding: 0.85rem 1.1rem;
+    }
+    .article h4 { font-size: 1rem; color: var(--green-dark); margin-bottom: 0.35rem; }
+    .article p { margin-top: 0.55rem; font-size: 0.98rem; line-height: 1.85; }
+    .article p:first-of-type { margin-top: 0; }
+    .article ul { margin-top: 0.55rem; padding-left: 1.2rem; }
+    .article li { font-size: 0.98rem; line-height: 1.8; margin-top: 0.25rem; }
+    .charter-source {
+      margin-top: 1.4rem;
+      padding-top: 0.8rem;
+      border-top: 1px dashed var(--line);
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      text-align: right;
+    }
+    .back-home { text-align: center; }
+    .back-home a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--green-dark);
+      padding: 0.55rem 1.3rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--box-bg);
+    }
+    .back-home a:hover { background: var(--menu-bg); }
     footer {
       background: var(--foot-bg);
       border-top: 1px solid var(--line);
@@ -114,6 +161,125 @@
         <span class="s-name">태공 최한종</span>
       </p>
     </section>
+
+    <section class="box" id="charter">
+      <h2>들뫼생태연구회 헌장</h2>
+      <p class="charter-sub">조류와 야생 생물의 관찰, 기록, 연구, 보전을 위한 들뫼생태연구회의 기본 원칙입니다.</p>
+
+      <div class="charter-group">
+        <h3>Ⅰ. 헌장 (제1조 ~ 제9조)</h3>
+
+        <div class="article">
+          <h4>제1조 (목적)</h4>
+          <p>본 연구회는 조류를 포함한 야생 생물의 번식 및 생태 전반을 정밀하게 관찰하고, 이를 객관적인 데이터로 기록하여 생태계 보전과 학술 발전에 기여함을 목적으로 한다.</p>
+        </div>
+
+        <div class="article">
+          <h4>제2조 (지향점)</h4>
+          <p>우리는 단순한 목격을 넘어 생애 주기(Life Cycle) 전반에 걸친 깊이 있는 연구를 표방하며, 기록의 진실성과 생명 윤리를 최우선 가치로 둔다.</p>
+        </div>
+
+        <div class="article">
+          <h4>제3조 (기록의 과학성)</h4>
+          <p>모든 관찰 기록은 정확한 근거(사진, 녹음, 영상 등)를 바탕으로 객관적으로 작성하며, 불확실한 기록은 추측하지 않고 전문가의 검증을 거친다.</p>
+        </div>
+
+        <div class="article">
+          <h4>제4조 (번식 관찰의 윤리)</h4>
+          <p>번식기 관찰 시 종의 안녕을 최우선으로 한다. 둥지 주변 식생 훼손, 과도한 소음, 플래시 남용, 무리한 접근 등 번식에 영향을 줄 수 있는 행위를 엄격히 금지한다.</p>
+        </div>
+
+        <div class="article">
+          <h4>제5조 (서식지 보호)</h4>
+          <p>멸종위기종 및 민감 종의 번식지 좌표는 무분별하게 공유하지 않으며, 운영진의 비공개 원칙을 준수하여 불필요한 인파 유입과 위협을 방지한다.</p>
+          <p>민감 종의 위치 정보는 운영진이 단계적으로 공개 범위를 조정할 수 있으며, 필요 시 비공개 또는 제한 공유 원칙을 적용한다.</p>
+        </div>
+
+        <div class="article">
+          <h4>제6조 (상호 존중)</h4>
+          <p>멤버 간의 학술적 견해 차이는 존중하되 비방이나 인신공격은 금지한다.</p>
+          <p>앞선 기록자는 후발 주자에게 지식을 나누고, 신입 멤버는 기존 연구 성과를 존중하며 배운다.</p>
+          <p>타인의 사진 및 관찰 기록을 인용할 경우 반드시 원 저작자와 출처를 명시한다.</p>
+        </div>
+
+        <div class="article">
+          <h4>제7조 (운영의 투명성)</h4>
+          <p>연구회 내 특정 소모임에 의한 파벌 형성 및 폐쇄적 운영을 지양하며, 모든 연구 논의는 연구회의 공적 게시판을 통해 투명하게 공유한다.</p>
+        </div>
+
+        <div class="article">
+          <h4>제8조 (광고 및 영리 행위 금지)</h4>
+          <p>본 연구회의 목적과 부합하지 않는 상업적 광고, 홍보, 링크 유도, 투자 권유 등의 게시물은 엄격히 금지한다.</p>
+          <p>타인의 사진과 기록물을 무단 도용하거나 상업적으로 이용하는 행위는 지적 재산권 침해로 간주하여 엄중히 대응한다.</p>
+        </div>
+
+        <div class="article">
+          <h4>제9조 (징계 조치)</h4>
+          <p>운영위원회는 다음의 행위를 한 자에 대해 사전 통보 없이 게시물 삭제 및 단계별 징계(경고, 활동 정지, 영구 제명)를 시행할 수 있다.</p>
+          <p>단, 생태 환경 훼손, 데이터 조작, 영리 행위 등 중대한 사안은 즉시 영구 제명할 수 있다.</p>
+          <p>징계 대상 행위:</p>
+          <ul>
+            <li>각 항목의 위반</li>
+            <li>생태 환경 훼손(환경 훼손, 동물 학대 등)</li>
+            <li>데이터 조작(기록 조작, 타인 데이터 무단 도용 등)</li>
+            <li>공동체 파괴(비방, 인신공격, 알력 다툼 등)</li>
+            <li>부적절한 영리 활동(연구회 정보 활용 사익 편취 등)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="charter-group">
+        <h3>Ⅱ. 부칙</h3>
+
+        <div class="article">
+          <h4>제1조 (효력 발생)</h4>
+          <p>본 헌장은 공포된 날로부터 모든 멤버에게 효력이 발생하며, 카페 가입과 동시에 본 헌장 및 하위 지침에 동의한 것으로 간주한다.</p>
+        </div>
+
+        <div class="article">
+          <h4>제2조 (개정)</h4>
+          <p>헌장 및 하위 지침의 개정은 운영진 회의를 거쳐 결정하며, 개정된 사항은 공지사항을 통해 공표한 즉시 효력을 가진다.</p>
+        </div>
+
+        <div class="article">
+          <h4>제3조 (준용 규정)</h4>
+          <p>본 규정에 명시되지 않은 사항은 일반적인 생태 윤리 관례 및 운영진의 의결에 따른다.</p>
+        </div>
+      </div>
+
+      <div class="charter-group">
+        <h3>Ⅲ. 들뫼생태연구회 현장 행동지침</h3>
+        <p class="g-note">본 지침은 헌장 제4조 및 제9조에 근거하며, 현장 연구 시 멤버들이 반드시 준수해야 할 세부 매뉴얼이다.</p>
+
+        <div class="article">
+          <h4>현장 이동 및 정숙 지침</h4>
+          <ul>
+            <li><strong>정숙 유지:</strong> 현장 진입 시 큰 소리로 대화하거나 뛰어다니는 행위를 엄격히 금지한다.</li>
+            <li><strong>접근 제한:</strong> 조류의 경계 거리 안으로 무리하게 진입하지 않으며, 새가 경계 신호를 보낼 경우 즉시 후퇴한다.</li>
+          </ul>
+        </div>
+
+        <div class="article">
+          <h4>촬영 및 기록 공개 지침</h4>
+          <ul>
+            <li>둥지, 알, 새끼, 육추 장면 등 번식 관련 기록은 실시간 공개를 금지하며, 번식 종료 후 공개를 원칙으로 한다.</li>
+            <li>운영진은 종의 민감도와 보호 필요성에 따라 공개 시기 및 범위를 제한할 수 있다.</li>
+          </ul>
+        </div>
+
+        <div class="article">
+          <h4>현장 영리 행위 금지 지침</h4>
+          <ul>
+            <li><strong>시설물 상업 이용 금지:</strong> 현장에 설치된 위장막 등을 활용해 타인에게 사용료를 받는 등 영리 목적의 영업 행위는 발견 즉시 최고 수위 징계(영구 제명)를 적용한다.</li>
+            <li><strong>현장 원상복구:</strong> 관찰 후에는 사용한 모든 개인 장비를 수거하며, 현장에 어떤 흔적도 남기지 않는 것을 원칙으로 한다.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="charter-source">출처: 네이버 카페 들뫼생태연구회 · 작성자: 진정 김진호</p>
+    </section>
+
+    <p class="back-home"><a href="/">← 홈으로 돌아가기</a></p>
   </main>
 
   <footer>© 2026 들뫼생태연구회 · Korean Birding Community · All rights reserved.</footer>
