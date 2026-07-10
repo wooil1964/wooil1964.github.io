@@ -28,9 +28,10 @@
     안내가 보이고, 푸터 로고는 숨겨집니다)
     ------------------------------------------------------------
     카페 게시판 URL 현황
-    - 심층탐구 menus/20, 함께 탐조 가요·새 동정 문의 menus/21,
-      6월의 새 menus/8 은 확정 주소 사용.
-    - 탐조지 소식, 탐조 예절 등 미확정 항목은 카페 대문
+    - 확정 주소 사용: 심층탐구 menus/20, 함께 탐조 가요·새 동정 문의
+      menus/21, 속닥속닥 이야기나누기 menus/1, 외국의 새 menus/23,
+      1월의 새~12월의 새 menus/3~14 (1월=3 … 12월=14).
+    - 탐조지 소식 등 미확정 항목은 카페 대문
       (https://cafe.naver.com/withbirds)으로 연결. 확정 시 교체.
     ============================================================
   -->
@@ -259,6 +260,12 @@
       gap: 0.55rem;
     }
     .archive .archive-buttons .btn { text-align: center; padding: 0.6rem 0.3rem; }
+    .months .month-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.55rem;
+    }
+    .months .month-buttons .btn { text-align: center; padding: 0.6rem 0.3rem; }
 
     .card-grid {
       display: grid;
@@ -317,10 +324,12 @@
         grid-template-areas: "center" "right" "left";
       }
       .archive .archive-buttons { grid-template-columns: repeat(2, 1fr); }
+      .months .month-buttons { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 560px) {
       .card-grid { grid-template-columns: 1fr; }
       .menu-bar a { font-size: 0.96rem; padding: 0.5rem 0.7rem; }
+      .months .month-buttons { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -337,13 +346,14 @@
   <nav class="menu-bar" aria-label="주요 메뉴">
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="about.html">들뫼 소개</a></li>
       <li><a href="https://wooil1964.github.io/birdmap/">전국 탐조지도</a></li>
       <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/20?viewType=L" target="_blank" rel="noopener">심층탐구</a></li>
       <!-- TODO: 탐조지 소식 게시판 URL 확정 시 교체 (현재 카페 대문) -->
       <li><a href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">탐조지 소식</a></li>
       <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/21?viewType=L" target="_blank" rel="noopener">새이름이 궁금해요</a></li>
       <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/21?viewType=L" target="_blank" rel="noopener">함께 탐조 가요</a></li>
+      <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/1?viewType=L" target="_blank" rel="noopener">속닥속닥 이야기나누기</a></li>
+      <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/23?viewType=L" target="_blank" rel="noopener">외국의 새</a></li>
       <li><a href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">네이버 카페</a></li>
     </ul>
   </nav>
@@ -367,8 +377,8 @@
         <h2>바로가기</h2>
         <ul class="quick-list">
           <li><a href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">네이버 카페</a></li>
-          <li><a href="https://wooil1964.github.io/birdmap/">전국 탐조지도</a></li>
-          <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/8?viewType=L" target="_blank" rel="noopener">이달의 새</a></li>
+          <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/1?viewType=L" target="_blank" rel="noopener">속닥속닥 이야기나누기</a></li>
+          <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/23?viewType=L" target="_blank" rel="noopener">외국의 새</a></li>
         </ul>
       </section>
 
@@ -402,45 +412,57 @@
         <h2>들뫼 탐조 자료실</h2>
         <div class="archive-buttons">
           <a class="btn" href="https://wooil1964.github.io/birdmap/">전국 탐조지도</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/20?viewType=L" target="_blank" rel="noopener">심층탐구</a>
           <!-- TODO: 탐조지 소식 게시판 URL 확정 시 교체 (현재 카페 대문) -->
           <a class="btn" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">탐조지 소식</a>
-          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/21?viewType=L" target="_blank" rel="noopener">새 동정 문의</a>
           <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/21?viewType=L" target="_blank" rel="noopener">함께 탐조 가요</a>
+        </div>
+      </div>
+
+      <div class="box archive months">
+        <h2>1월의 새 ~ 12월의 새</h2>
+        <div class="month-buttons">
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/3?viewType=L" target="_blank" rel="noopener">1월의 새</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/4?viewType=L" target="_blank" rel="noopener">2월의 새</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/5?viewType=L" target="_blank" rel="noopener">3월의 새</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/6?viewType=L" target="_blank" rel="noopener">4월의 새</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/7?viewType=L" target="_blank" rel="noopener">5월의 새</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/8?viewType=L" target="_blank" rel="noopener">6월의 새</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/9?viewType=L" target="_blank" rel="noopener">7월의 새</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/10?viewType=L" target="_blank" rel="noopener">8월의 새</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/11?viewType=L" target="_blank" rel="noopener">9월의 새</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/12?viewType=L" target="_blank" rel="noopener">10월의 새</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/13?viewType=L" target="_blank" rel="noopener">11월의 새</a>
+          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/14?viewType=L" target="_blank" rel="noopener">12월의 새</a>
         </div>
       </div>
 
       <div class="card-grid">
         <div class="box info-card">
-          <h3>회장 인사말</h3>
-          <p>새를 보는 일은 자연을 이해하는 첫걸음입니다. 들뫼는 탐조 기록과 보전 문화를 함께 이어가겠습니다.</p>
-          <a class="more" href="about.html#greeting">자세히 보기 →</a>
+          <h3>새이름이 궁금해요</h3>
+          <p>사진 속 새의 이름과 특징을 함께 확인하는 동정 문의 공간입니다.</p>
+          <a class="btn btn-block" href="https://cafe.naver.com/f-e/cafes/30520110/menus/21?viewType=L" target="_blank" rel="noopener">새 동정 문의</a>
         </div>
         <div class="box info-card">
-          <h3>홈페이지 역할</h3>
-          <p>외부 방문자에게 단체와 전국 탐조지도를 소개하고 탐조 정보를 제공합니다.</p>
-          <a class="more" href="about.html">자세히 보기 →</a>
+          <h3>속닥속닥 이야기나누기</h3>
+          <p>회원들의 일상 이야기와 탐조 이야기를 편하게 나누는 공간입니다.</p>
+          <a class="btn btn-block" href="https://cafe.naver.com/f-e/cafes/30520110/menus/1?viewType=L" target="_blank" rel="noopener">이야기 보기</a>
         </div>
         <div class="box info-card">
-          <h3>카페 역할</h3>
-          <p>회원 가입, 댓글, 사진, 탐조기는 네이버 카페에서 이어갑니다.</p>
-          <a class="more" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">카페 바로가기 →</a>
+          <h3>외국의 새</h3>
+          <p>해외 탐조와 외국 조류 기록을 함께 나누는 공간입니다.</p>
+          <a class="btn btn-block" href="https://cafe.naver.com/f-e/cafes/30520110/menus/23?viewType=L" target="_blank" rel="noopener">외국의 새 보기</a>
         </div>
         <div class="box info-card">
-          <h3>탐조지도 역할</h3>
-          <p>지역·계절·희귀조·섬탐조 조건으로 탐조지를 검색할 수 있습니다.</p>
-          <a class="more" href="https://wooil1964.github.io/birdmap/">탐조지도 바로가기 →</a>
+          <h3>네이버 카페</h3>
+          <p>회원 글쓰기, 댓글, 사진, 탐조기는 네이버 카페에서 이어갑니다.</p>
+          <a class="btn btn-block" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">카페 바로가기</a>
         </div>
       </div>
     </section>
 
     <!-- ---------- 오른쪽 ---------- -->
     <aside class="col-right">
-      <section class="box">
-        <h2>전국 탐조지도</h2>
-        <p>지역별 탐조지 정보를 지도에서 확인하세요.</p>
-        <a class="btn btn-block" href="https://wooil1964.github.io/birdmap/">탐조지도 보기</a>
-      </section>
-
       <section class="box bird-month">
         <h2>이달의 새</h2>
         <p class="b-month">6월의 새</p>
@@ -449,9 +471,15 @@
       </section>
 
       <section class="box">
-        <h2>들뫼 헌장</h2>
-        <p>들뫼생태연구회가 지향하는 연구 윤리, 기록 원칙, 현장 행동지침을 확인하세요.</p>
-        <a class="btn btn-block" href="about.html#charter">헌장 보기</a>
+        <h2>외국의 새</h2>
+        <p>해외 탐조와 외국 조류 기록을 함께 살펴보는 공간입니다.</p>
+        <a class="btn btn-block" href="https://cafe.naver.com/f-e/cafes/30520110/menus/23?viewType=L" target="_blank" rel="noopener">외국의 새 보기</a>
+      </section>
+
+      <section class="box">
+        <h2>속닥속닥 이야기나누기</h2>
+        <p>회원들의 자유로운 이야기와 탐조 소식을 나누는 공간입니다.</p>
+        <a class="btn btn-block" href="https://cafe.naver.com/f-e/cafes/30520110/menus/1?viewType=L" target="_blank" rel="noopener">이야기 보기</a>
       </section>
     </aside>
   </main>
