@@ -260,12 +260,37 @@
       gap: 0.55rem;
     }
     .archive .archive-buttons .btn { text-align: center; padding: 0.6rem 0.3rem; }
-    .months .month-buttons {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.55rem;
+    /* 월별새: 접이식 소형 박스 */
+    details.months { padding: 0.65rem 1.05rem; }
+    details.months summary {
+      cursor: pointer;
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.7rem;
+      list-style: none;
     }
-    .months .month-buttons .btn { text-align: center; padding: 0.6rem 0.3rem; }
+    details.months summary::-webkit-details-marker { display: none; }
+    details.months summary::before {
+      content: "▸";
+      color: var(--green);
+      font-size: 0.9rem;
+    }
+    details.months[open] summary::before { content: "▾"; }
+    details.months .sum-title {
+      font-family: "Noto Serif KR", serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+    details.months .sum-desc { font-size: 0.88rem; color: var(--ink-soft); }
+    .months .month-buttons {
+      margin-top: 0.75rem;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.45rem;
+    }
+    .months .month-buttons .btn { text-align: center; padding: 0.42rem 0.2rem; font-size: 0.88rem; }
 
     .card-grid {
       display: grid;
@@ -308,6 +333,13 @@
       font-size: 0.9rem;
       color: var(--ink-soft);
     }
+    footer .foot-aux {
+      font-size: 0.84rem;
+      margin-bottom: 0.45rem;
+    }
+    footer .foot-aux a { color: var(--ink-soft); text-decoration: none; }
+    footer .foot-aux a:hover { text-decoration: underline; }
+    footer .foot-aux span { margin: 0 0.4rem; color: var(--line); }
     footer .foot-line {
       display: inline-flex;
       align-items: center;
@@ -419,8 +451,11 @@
         </div>
       </div>
 
-      <div class="box archive months">
-        <h2>1월의 새 ~ 12월의 새</h2>
+      <details class="box months">
+        <summary>
+          <span class="sum-title">월별새 보기</span>
+          <span class="sum-desc">1월부터 12월까지 회원들이 선정한 월별 새 기록을 확인합니다.</span>
+        </summary>
         <div class="month-buttons">
           <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/3?viewType=L" target="_blank" rel="noopener">1월의 새</a>
           <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/4?viewType=L" target="_blank" rel="noopener">2월의 새</a>
@@ -435,7 +470,7 @@
           <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/13?viewType=L" target="_blank" rel="noopener">11월의 새</a>
           <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/14?viewType=L" target="_blank" rel="noopener">12월의 새</a>
         </div>
-      </div>
+      </details>
 
       <div class="card-grid">
         <div class="box info-card">
@@ -486,6 +521,11 @@
 
   <!-- ==================== 푸터 ==================== -->
   <footer>
+    <p class="foot-aux">
+      <a href="greeting.html">회장 인사말</a>
+      <span aria-hidden="true">|</span>
+      <a href="charter.html">들뫼 헌장</a>
+    </p>
     <p class="foot-line">
       <!-- 로고 파일(assets/images/dulmoe-logo.png)을 올리면 자동 표시됩니다 -->
       <img class="logo" src="assets/images/dulmoe-logo.png" alt="들뫼생태연구회 로고" onerror="this.style.display='none'">
