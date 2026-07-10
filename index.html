@@ -72,7 +72,32 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.2rem;
       padding: 1.2rem 5vw;
+    }
+    .top-nav {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.15rem 0.2rem;
+    }
+    .top-nav a {
+      color: #fdf9ef;
+      text-decoration: none;
+      font-size: 1.08rem;
+      font-weight: 500;
+      padding: 0.55rem 0.9rem;
+      border-radius: 999px;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+      transition: background 0.15s ease;
+    }
+    .top-nav a:hover { background: rgba(253, 249, 239, 0.18); }
+    .top-nav a.todo-link { opacity: 0.75; }
+    @media (max-width: 700px) {
+      .hero-top { justify-content: center; text-align: center; }
+      .top-nav { justify-content: center; }
+      .top-nav a { font-size: 1.02rem; padding: 0.5rem 0.7rem; }
     }
     .brand {
       font-family: "Noto Serif KR", serif;
@@ -269,6 +294,17 @@
   <header class="hero">
     <div class="hero-top">
       <a class="brand" href="index.html">들뫼생태연구회</a>
+      <nav class="top-nav" aria-label="주요 메뉴">
+        <a href="/">홈</a>
+        <a href="/birdmap/">전국 탐조지도</a>
+        <a href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">들뫼 카페</a>
+        <!-- TODO: 아래 4개 메뉴는 네이버 카페 게시판 URL 확정 후 href="#"를 실제 주소로 교체하세요.
+             외부 링크로 바꿀 때 target="_blank" rel="noopener"를 반드시 추가합니다. -->
+        <a href="#" class="todo-link" title="게시판 주소 준비 중">공지사항</a>
+        <a href="#" class="todo-link" title="게시판 주소 준비 중">탐조 후기</a>
+        <a href="#" class="todo-link" title="게시판 주소 준비 중">탐조 자료실</a>
+        <a href="#" class="todo-link" title="게시판 주소 준비 중">심층탐구</a>
+      </nav>
     </div>
     <div class="hero-body">
       <h1>새가 머무는 곳을<br>사람이 기억합니다.</h1>
