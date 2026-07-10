@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>들뫼생태연구회 | 전국 탐조지도와 탐조 커뮤니티</title>
+  <meta name="description" content="들뫼생태연구회 공식 안내 홈페이지. 전국 탐조지도, 심층탐구, 새이름이 궁금해요, 함께 탐조 가요 등 네이버 카페 주요 게시판으로 연결합니다.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="들뫼생태연구회 | 전국 탐조지도와 탐조 커뮤니티">
+  <meta property="og:description" content="새가 머무는 곳을 사람이 기억합니다. 전국 탐조지도와 네이버 카페 탐조 커뮤니티로 연결하는 들뫼생태연구회 공식 홈페이지.">
+  <!-- TODO: 실제 새 사진(PNG/JPG)으로 교체하면 카카오톡·네이버 공유 미리보기에 더 잘 나옵니다 (README 참고) -->
+  <meta property="og:image" content="assets/hero-birds.svg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕊️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+
+  <!--
+    ============================================================
+    TODO: 네이버 카페 게시판별 URL 교체 안내
+    ------------------------------------------------------------
+    카페 대문 주소는 실제 주소(https://cafe.naver.com/withbirds)로
+    적용되어 있습니다. 다만 게시판 카드(심층탐구, 이 달의 새 등)는
+    아직 게시판별 주소가 아니라 카페 대문으로 연결됩니다.
+    각 게시판의 실제 주소를 확인한 뒤 하나씩 교체해 주세요.
+
+    예) 게시판: https://cafe.naver.com/withbirds?iframe_url=/ArticleList.nhn%3Fsearch.menuid=게시판번호
+        (또는 카페 게시판에서 "URL 복사"로 얻은 주소를 그대로 사용)
+
+    교체 대상 임시 링크에는 각각 TODO 주석을 달아 두었습니다.
+    ============================================================
+  -->
+
+  <style>
+    :root {
+      --ink: #22301f;
+      --ink-soft: #4c5a48;
+      --paper: #f7f4ec;
+      --card: #ffffff;
+      --green: #2f6b4f;
+      --green-dark: #24523d;
+      --dawn: #c9772e;
+      --line: #e3ddcd;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      font-size: 19px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--paper);
+      word-break: keep-all;
+    }
+    img { max-width: 100%; }
+    a { color: inherit; }
+
+    /* ---------- 첫 화면(히어로) ---------- */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      background:
+        linear-gradient(180deg, rgba(20, 34, 44, 0.35) 0%, rgba(20, 34, 44, 0.15) 45%, rgba(24, 36, 30, 0.55) 100%),
+        url("assets/hero-birds.svg") center / cover no-repeat;
+      color: #fdf9ef;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 5vw;
+    }
+    .brand {
+      font-family: "Noto Serif KR", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.45);
+    }
+    .hero-body {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 3rem 6vw 5rem;
+    }
+    .hero h1 {
+      font-family: "Noto Serif KR", serif;
+      font-size: clamp(2.1rem, 5.5vw, 3.6rem);
+      font-weight: 700;
+      line-height: 1.35;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+      max-width: 22em;
+    }
+    .hero p {
+      margin-top: 1.4rem;
+      font-size: clamp(1.05rem, 2.4vw, 1.3rem);
+      max-width: 34em;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+      color: #f4ecdb;
+    }
+    .hero-buttons {
+      margin-top: 2.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 1.05rem 2.2rem;
+      border-radius: 999px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-map { background: var(--green); color: #fff; }
+    .btn-map:hover { background: var(--green-dark); }
+    .btn-cafe { background: #fdf9ef; color: var(--green-dark); }
+    .hero-scroll {
+      position: absolute;
+      bottom: 1.4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1rem;
+      color: #f4ecdb;
+      text-decoration: none;
+      opacity: 0.9;
+    }
+
+    /* ---------- 공통 섹션 ---------- */
+    .section {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 4rem 5vw 1rem;
+    }
+    .section h2 {
+      font-family: "Noto Serif KR", serif;
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      color: var(--green-dark);
+    }
+    .section .section-sub {
+      margin-top: 0.6rem;
+      color: var(--ink-soft);
+      font-size: 1.08rem;
+    }
+
+    /* ---------- 카드 ---------- */
+    .card-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.1rem;
+    }
+    .card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.4rem 1.5rem;
+      text-decoration: none;
+      box-shadow: 0 2px 10px rgba(60, 70, 50, 0.06);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(60, 70, 50, 0.13);
+      border-color: var(--green);
+    }
+    .card .card-icon { font-size: 1.7rem; }
+    .card h3 {
+      margin-top: 0.5rem;
+      font-size: 1.22rem;
+      color: var(--ink);
+    }
+    .card p {
+      margin-top: 0.35rem;
+      font-size: 1rem;
+      color: var(--ink-soft);
+    }
+    .card .go {
+      display: inline-block;
+      margin-top: 0.7rem;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+    .card-featured {
+      background: linear-gradient(135deg, #2f6b4f 0%, #3c8263 100%);
+      border-color: transparent;
+    }
+    .card-featured h3, .card-featured p, .card-featured .go { color: #fdf9ef; }
+    .card-featured .go { color: #ffe9c9; }
+
+    /* ---------- 이 달의 새 ---------- */
+    .month-grid {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.9rem;
+    }
+    .month-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 1.15rem 0.5rem;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(60, 70, 50, 0.05);
+      transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    .month-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--dawn);
+      box-shadow: 0 6px 16px rgba(60, 70, 50, 0.12);
+    }
+    .month-card .m-num {
+      font-family: "Noto Serif KR", serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--dawn);
+    }
+    .month-card .m-label { font-size: 1.05rem; color: var(--ink); font-weight: 500; }
+
+    /* ---------- 푸터 ---------- */
+    footer {
+      margin-top: 4.5rem;
+      padding: 2.5rem 5vw 3rem;
+      background: #24352b;
+      color: #d8d2c0;
+      text-align: center;
+      font-size: 1rem;
+    }
+    footer .f-brand {
+      font-family: "Noto Serif KR", serif;
+      font-size: 1.2rem;
+      color: #f4ecdb;
+    }
+    footer a { color: #ffe9c9; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer .f-links { margin-top: 0.8rem; display: flex; justify-content: center; gap: 1.6rem; flex-wrap: wrap; }
+
+    @media (max-width: 480px) {
+      body { font-size: 18px; }
+      .hero { min-height: 88vh; }
+      .btn { width: 100%; text-align: center; }
+      .hero-buttons { width: 100%; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== 첫 화면 ==================== -->
+  <header class="hero">
+    <div class="hero-top">
+      <a class="brand" href="index.html">들뫼생태연구회</a>
+    </div>
+    <div class="hero-body">
+      <h1>새가 머무는 곳을<br>사람이 기억합니다.</h1>
+      <p>들뫼생태연구회는 전국 탐조지도와 현장 중심의 탐조 정보를 정리하고,
+         네이버 카페를 통해 회원들의 사진·탐조기·새 동정 문의를 이어갑니다.</p>
+      <div class="hero-buttons">
+        <a class="btn btn-map" href="map.html">전국 탐조지도 보기</a>
+        <a class="btn btn-cafe" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">네이버 카페 바로가기</a>
+      </div>
+    </div>
+    <a class="hero-scroll" href="#menu">▼ 카페 게시판 바로가기</a>
+  </header>
+
+  <!-- ==================== 카페 게시판 바로가기 ==================== -->
+  <main>
+    <section class="section" id="menu">
+      <h2>카페 게시판 바로가기</h2>
+      <p class="section-sub">네이버 카페의 주요 게시판으로 바로 이동합니다. 메뉴 이름은 카페와 동일하게 구성했습니다.</p>
+
+      <div class="card-grid">
+        <a class="card card-featured" href="map.html">
+          <span class="card-icon">🗺️</span>
+          <h3>전국 탐조지도</h3>
+          <p>전국 탐조지의 위치·기상·조석 정보를 한 지도에서 봅니다.</p>
+          <span class="go">지도 안내 페이지로 →</span>
+        </a>
+
+        <!-- TODO: 아래 카드들은 현재 카페 대문으로 연결됨. 각 게시판별 URL로 교체 -->
+        <a class="card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><!-- TODO: 심층탐구 게시판 URL -->
+          <span class="card-icon">🔍</span>
+          <h3>심층탐구</h3>
+          <p>새와 서식지를 깊이 있게 들여다보는 관찰 기록과 연구 글.</p>
+          <span class="go">카페에서 보기 →</span>
+        </a>
+
+        <a class="card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><!-- TODO: 숙닥숙닥 이야기나누기 게시판 URL -->
+          <span class="card-icon">💬</span>
+          <h3>숙닥숙닥 이야기나누기</h3>
+          <p>회원들의 소소한 일상과 탐조 이야기를 나누는 자유 게시판.</p>
+          <span class="go">카페에서 보기 →</span>
+        </a>
+
+        <a class="card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><!-- TODO: 함께 탐조 가요 게시판 URL -->
+          <span class="card-icon">🚌</span>
+          <h3>함께 탐조 가요</h3>
+          <p>같이 떠나는 탐조 모임과 동행 모집 안내.</p>
+          <span class="go">카페에서 보기 →</span>
+        </a>
+
+        <a class="card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><!-- TODO: 탐조지 소식 게시판 URL -->
+          <span class="card-icon">📰</span>
+          <h3>탐조지 소식</h3>
+          <p>전국 탐조지의 최근 소식과 현장 상황 공유.</p>
+          <span class="go">카페에서 보기 →</span>
+        </a>
+
+        <a class="card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><!-- TODO: 새이름이 궁금해요 게시판 URL -->
+          <span class="card-icon">❓</span>
+          <h3>새이름이 궁금해요</h3>
+          <p>사진 속 새의 이름을 함께 찾아 드리는 동정 문의 게시판.</p>
+          <span class="go">카페에서 보기 →</span>
+        </a>
+
+        <a class="card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><!-- TODO: 외국의 새 게시판 URL -->
+          <span class="card-icon">✈️</span>
+          <h3>외국의 새</h3>
+          <p>해외 탐조에서 만난 새들의 사진과 기록.</p>
+          <span class="go">카페에서 보기 →</span>
+        </a>
+
+        <a class="card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><!-- TODO: 가입인사 게시판 URL -->
+          <span class="card-icon">👋</span>
+          <h3>가입인사</h3>
+          <p>새로 오신 회원들의 첫 인사를 나누는 곳.</p>
+          <span class="go">카페에서 보기 →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== 이 달의 새 ==================== -->
+    <section class="section" id="monthly">
+      <h2>이 달의 새</h2>
+      <p class="section-sub">달마다 만나기 좋은 새들을 정리한 게시판입니다. 보고 싶은 달을 눌러 주세요.</p>
+
+      <!-- TODO: 아래 12개 링크는 현재 카페 대문으로 연결됨. "N월의 새" 게시판별 URL로 각각 교체 -->
+      <div class="month-grid">
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">1월</span><span class="m-label">1월의 새</span></a>
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">2월</span><span class="m-label">2월의 새</span></a>
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">3월</span><span class="m-label">3월의 새</span></a>
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">4월</span><span class="m-label">4월의 새</span></a>
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">5월</span><span class="m-label">5월의 새</span></a>
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">6월</span><span class="m-label">6월의 새</span></a>
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">7월</span><span class="m-label">7월의 새</span></a>
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">8월</span><span class="m-label">8월의 새</span></a>
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">9월</span><span class="m-label">9월의 새</span></a>
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">10월</span><span class="m-label">10월의 새</span></a>
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">11월</span><span class="m-label">11월의 새</span></a>
+        <a class="month-card" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener"><span class="m-num">12월</span><span class="m-label">12월의 새</span></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 푸터 ==================== -->
+  <footer>
+    <div class="f-brand">들뫼생태연구회</div>
+    <p>새가 머무는 곳을 사람이 기억합니다.</p>
+    <div class="f-links">
+      <a href="map.html">전국 탐조지도</a>
+      <a href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">네이버 카페</a>
+    </div>
+  </footer>
+
+</body>
+</html>

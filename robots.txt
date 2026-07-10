@@ -1,0 +1,7 @@
+# 들뫼생태연구회 홈페이지 robots.txt
+# 모든 검색엔진(네이버 Yeti, Google 등)의 수집을 허용합니다.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://wooil1964.github.io/sitemap.xml

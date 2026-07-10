@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>전국 탐조지도 | 들뫼생태연구회</title>
+  <meta name="description" content="들뫼생태연구회 전국 탐조지도 안내 페이지. 전국 탐조지의 위치, 실시간 기상, 조석 정보를 한 지도에서 확인할 수 있습니다.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕊️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+
+  <!--
+    ============================================================
+    전국 탐조지도 이관 안내 (미래 작업용 주석)
+    ------------------------------------------------------------
+    실제 전국 탐조지도는 현재 별도 저장소(birdmap)의 index.html에서
+    운영 중이며, 이 페이지는 그 지도로 연결하는 안내 페이지입니다.
+
+    나중에 지도를 이 홈페이지로 옮기려면:
+    1) birdmap 저장소의 index.html(지도 본체)과
+       weather_today.json / tide_today.json / tide_month.json /
+       notices.json 등 데이터 파일, GitHub Actions 워크플로를
+       함께 이관해야 합니다.
+    2) 이관 전까지는 아래 외부 링크 버튼 방식을 유지하고,
+       이관 후 이 페이지에서 <iframe> 삽입 또는 직접 통합을
+       선택할 수 있습니다.
+    3) 지도 데이터(siteData)와 weather-proxy/src/sites.js는
+       이중 관리되므로 이관 시 반드시 함께 검토해야 합니다.
+    ============================================================
+  -->
+
+  <style>
+    :root {
+      --ink: #22301f;
+      --ink-soft: #4c5a48;
+      --paper: #f7f4ec;
+      --green: #2f6b4f;
+      --green-dark: #24523d;
+      --line: #e3ddcd;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      font-size: 19px;
+      line-height: 1.65;
+      color: var(--ink);
+      background: var(--paper);
+      word-break: keep-all;
+    }
+    a { color: inherit; }
+
+    .top-bar {
+      background: #24352b;
+      color: #f4ecdb;
+      padding: 1rem 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .top-bar .brand {
+      font-family: "Noto Serif KR", serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .top-bar .home-link {
+      font-size: 1.05rem;
+      text-decoration: none;
+      color: #ffe9c9;
+    }
+    .top-bar .home-link:hover { text-decoration: underline; }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3.5rem 5vw 4rem;
+      text-align: center;
+    }
+    .map-banner {
+      height: 220px;
+      border-radius: 18px;
+      background:
+        linear-gradient(180deg, rgba(20, 34, 44, 0.25), rgba(24, 36, 30, 0.4)),
+        url("assets/hero-birds.svg") center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-banner h1 {
+      font-family: "Noto Serif KR", serif;
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: #fdf9ef;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    }
+    .desc {
+      margin-top: 2.2rem;
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      max-width: 36em;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .desc strong { color: var(--ink); }
+
+    .btn-open {
+      display: inline-block;
+      margin-top: 2.4rem;
+      padding: 1.2rem 2.8rem;
+      border-radius: 999px;
+      background: var(--green);
+      color: #fff;
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(47, 107, 79, 0.35);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .btn-open:hover { transform: translateY(-2px); background: var(--green-dark); }
+
+    .note {
+      margin-top: 1.6rem;
+      font-size: 1rem;
+      color: var(--ink-soft);
+    }
+
+    .feature-list {
+      margin: 3rem auto 0;
+      max-width: 560px;
+      text-align: left;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.6rem 2rem;
+    }
+    .feature-list h2 {
+      font-family: "Noto Serif KR", serif;
+      font-size: 1.3rem;
+      color: var(--green-dark);
+    }
+    .feature-list ul { margin-top: 0.8rem; padding-left: 1.3rem; }
+    .feature-list li { margin-top: 0.45rem; font-size: 1.08rem; }
+
+    footer {
+      padding: 2rem 5vw;
+      background: #24352b;
+      color: #d8d2c0;
+      text-align: center;
+      font-size: 1rem;
+    }
+    footer a { color: #ffe9c9; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <nav class="top-bar">
+    <a class="brand" href="index.html">들뫼생태연구회</a>
+    <a class="home-link" href="index.html">← 홈으로 돌아가기</a>
+  </nav>
+
+  <main class="wrap">
+    <div class="map-banner">
+      <h1>전국 탐조지도</h1>
+    </div>
+
+    <p class="desc">
+      전국 탐조지의 <strong>위치, 실시간 기상, 조석 정보, 대중교통 안내</strong>를
+      한 지도에서 볼 수 있습니다. 아래 버튼을 누르면 현재 운영 중인
+      전국 탐조지도가 새 창으로 열립니다.
+    </p>
+
+    <a class="btn-open" href="https://wooil1964.github.io/birdmap/" target="_blank" rel="noopener">전국 탐조지도 열기</a>
+    <p class="note">버튼을 누르면 새 창(새 탭)에서 지도가 열립니다.</p>
+
+    <section class="feature-list">
+      <h2>지도에서 볼 수 있는 것</h2>
+      <ul>
+        <li>전국 주요 탐조지의 위치와 소개</li>
+        <li>탐조지별 오늘의 기상과 탐조 적합도</li>
+        <li>서해안 갯벌 탐조지의 물때(조석) 정보</li>
+        <li>탐조기획 공지와 대중교통 안내</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <a href="index.html">들뫼생태연구회 홈</a>
+  </footer>
+
+</body>
+</html>

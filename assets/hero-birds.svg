@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  들뫼생태연구회 홈페이지 첫 화면 배경 (아침빛 습지와 새 실루엣)
+  외부 이미지 의존 없이 동작하는 SVG 일러스트입니다.
+  실제 새 사진(PNG/JPG)으로 교체하는 방법은 README.md를 참고하세요.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="아침빛이 비치는 습지 위로 새 무리가 날아가는 풍경">
+  <defs>
+    <!-- 새벽 하늘: 짙은 남색에서 살구빛으로 -->
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#20304a"/>
+      <stop offset="42%" stop-color="#4a5570"/>
+      <stop offset="68%" stop-color="#b97f63"/>
+      <stop offset="88%" stop-color="#eab676"/>
+      <stop offset="100%" stop-color="#f6d69a"/>
+    </linearGradient>
+    <!-- 해 주변의 빛 번짐 -->
+    <radialGradient id="sunGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%"  stop-color="#ffe9b8" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#f8c67e" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#f8c67e" stop-opacity="0"/>
+    </radialGradient>
+    <!-- 물: 하늘을 비추는 잔잔한 수면 -->
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#e8b97e"/>
+      <stop offset="30%" stop-color="#b98a6d"/>
+      <stop offset="70%" stop-color="#5d5a66"/>
+      <stop offset="100%" stop-color="#333c4a"/>
+    </linearGradient>
+    <!-- 해가 물에 비친 길 -->
+    <linearGradient id="sunPath" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"  stop-color="#ffe3a0" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#ffd98e" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 하늘 -->
+  <rect width="1600" height="620" fill="url(#sky)"/>
+
+  <!-- 해와 빛 번짐 -->
+  <circle cx="1090" cy="565" r="330" fill="url(#sunGlow)"/>
+  <circle cx="1090" cy="568" r="58" fill="#ffe9b8"/>
+
+  <!-- 먼 산 능선 -->
+  <path d="M0,560 L120,510 L260,548 L420,492 L560,540 L700,505 L820,545 L940,520 L1080,552 L1230,512 L1380,548 L1500,522 L1600,545 L1600,620 L0,620 Z"
+        fill="#3d3a52" opacity="0.75"/>
+  <path d="M0,586 L180,552 L340,580 L520,548 L720,584 L900,556 L1100,586 L1300,558 L1470,584 L1600,566 L1600,620 L0,620 Z"
+        fill="#2e3040" opacity="0.9"/>
+
+  <!-- 수면 -->
+  <rect y="620" width="1600" height="280" fill="url(#water)"/>
+  <!-- 해가 비친 물길 -->
+  <path d="M1040,620 L1140,620 L1190,900 L980,900 Z" fill="url(#sunPath)"/>
+  <!-- 잔물결 -->
+  <g stroke="#f6d69a" stroke-linecap="round" opacity="0.5">
+    <line x1="860"  y1="660" x2="1010" y2="660" stroke-width="3"/>
+    <line x1="1130" y1="678" x2="1300" y2="678" stroke-width="3"/>
+    <line x1="960"  y1="706" x2="1170" y2="706" stroke-width="4"/>
+    <line x1="760"  y1="745" x2="960"  y2="745" stroke-width="4" opacity="0.6"/>
+    <line x1="1080" y1="775" x2="1330" y2="775" stroke-width="5" opacity="0.5"/>
+  </g>
+  <g stroke="#8b93a8" stroke-linecap="round" opacity="0.45">
+    <line x1="180" y1="672" x2="380" y2="672" stroke-width="3"/>
+    <line x1="90"  y1="726" x2="330" y2="726" stroke-width="4"/>
+    <line x1="420" y1="790" x2="640" y2="790" stroke-width="5"/>
+    <line x1="1380" y1="720" x2="1560" y2="720" stroke-width="4"/>
+  </g>
+
+  <!-- 물가에 선 왜가리 실루엣 -->
+  <g fill="#1c2420" transform="translate(1218,568) scale(1.12)">
+    <path d="M0,0
+             C -4,-10 -2,-22 6,-30
+             C 12,-36 20,-38 26,-35
+             C 30,-46 36,-58 45,-66
+             C 48,-69 52,-70 54,-68
+             L 70,-64
+             L 55,-61
+             C 52,-54 50,-44 49,-34
+             C 48,-20 44,-8 34,-2
+             C 26,3 12,4 0,0 Z"/>
+    <rect x="18" y="0" width="2.6" height="46"/>
+    <rect x="30" y="0" width="2.6" height="46"/>
+  </g>
+
+  <!-- 날아가는 새 무리 (실루엣) -->
+  <g stroke="#232a33" fill="none" stroke-linecap="round">
+    <path d="M420,205 q 16,-20 32,0 q 16,-20 32,0" stroke-width="6"/>
+    <path d="M520,168 q 13,-16 26,0 q 13,-16 26,0" stroke-width="5"/>
+    <path d="M610,225 q 11,-14 22,0 q 11,-14 22,0" stroke-width="5"/>
+    <path d="M505,262 q 10,-13 20,0 q 10,-13 20,0" stroke-width="4.5"/>
+    <path d="M700,150 q 9,-11 18,0 q 9,-11 18,0" stroke-width="4"/>
+    <path d="M760,300 q 12,-15 24,0 q 12,-15 24,0" stroke-width="5"/>
+    <path d="M880,232 q 8,-10 16,0 q 8,-10 16,0" stroke-width="3.5" opacity="0.9"/>
+    <path d="M985,180 q 7,-9 14,0 q 7,-9 14,0" stroke-width="3" opacity="0.8"/>
+    <path d="M330,300 q 8,-10 16,0 q 8,-10 16,0" stroke-width="3.5" opacity="0.85"/>
+    <path d="M1240,250 q 9,-11 18,0 q 9,-11 18,0" stroke-width="3.5" opacity="0.7"/>
+    <path d="M1320,205 q 7,-9 14,0 q 7,-9 14,0" stroke-width="3" opacity="0.6"/>
+  </g>
+
+  <!-- 앞쪽 갈대 (왼쪽 아래) -->
+  <g fill="#16201a">
+    <g transform="translate(70,900)">
+      <path d="M0,0 C 6,-90 2,-180 14,-262 L 20,-262 C 12,-180 18,-90 14,0 Z"/>
+      <ellipse cx="19" cy="-274" rx="9" ry="26"/>
+      <path d="M52,0 C 56,-70 50,-150 62,-215 L 68,-215 C 60,-150 66,-70 62,0 Z"/>
+      <ellipse cx="67" cy="-227" rx="8" ry="22"/>
+      <path d="M108,0 C 112,-80 104,-170 118,-240 L 124,-240 C 114,-170 122,-80 118,0 Z"/>
+      <ellipse cx="123" cy="-252" rx="8.5" ry="24"/>
+      <path d="M160,0 C 162,-55 158,-115 166,-165 L 171,-165 C 165,-115 170,-55 166,0 Z"/>
+      <ellipse cx="170" cy="-176" rx="7" ry="19"/>
+      <path d="M28,0 C 34,-60 30,-120 44,-172 L 40,-178 C 24,-122 26,-60 22,0 Z"/>
+      <path d="M138,0 C 146,-50 140,-104 156,-148 L 152,-154 C 134,-106 136,-52 132,0 Z"/>
+    </g>
+  </g>
+
+  <!-- 앞쪽 갈대 (오른쪽 아래) -->
+  <g fill="#16201a">
+    <g transform="translate(1450,900) scale(-1,1)">
+      <path d="M0,0 C 6,-75 2,-150 14,-220 L 20,-220 C 12,-150 18,-75 14,0 Z"/>
+      <ellipse cx="19" cy="-232" rx="8.5" ry="24"/>
+      <path d="M54,0 C 58,-60 52,-125 64,-180 L 70,-180 C 62,-125 68,-60 64,0 Z"/>
+      <ellipse cx="69" cy="-191" rx="7.5" ry="20"/>
+      <path d="M26,0 C 34,-55 28,-112 44,-158 L 40,-164 C 22,-114 24,-56 20,0 Z"/>
+      <path d="M96,0 C 100,-45 96,-92 104,-132 L 109,-132 C 103,-92 108,-45 104,0 Z"/>
+      <ellipse cx="108" cy="-142" rx="6.5" ry="17"/>
+    </g>
+  </g>
+</svg>
