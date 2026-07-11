@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>들뫼생태연구회 공지사항</title>
+  <meta name="description" content="들뫼생태연구회 공지사항. 전국 탐조지도 활용, 이달의 새 선정, 탐조 예절 캠페인 안내를 확인합니다.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕊️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --page-bg: #D9E1D8;
+      --body-bg: #F5F7F2;
+      --box-bg: #FFFDF7;
+      --line: #A7B29F;
+      --head-bg: #D7DED0;
+      --menu-bg: #C7D3C2;
+      --foot-bg: #D6DDD1;
+      --ink: #2C3A2E;
+      --ink-soft: #55624F;
+      --green: #4F6A54;
+      --green-dark: #3D5442;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--page-bg);
+      word-break: keep-all;
+    }
+    a { color: inherit; }
+    .site {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--body-bg);
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .masthead {
+      background: var(--head-bg);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+      padding: 1.2rem 5vw 1rem;
+    }
+    .masthead h1 { font-family: "Noto Serif KR", serif; font-size: 1.7rem; letter-spacing: 0.06em; }
+    .masthead h1 a { text-decoration: none; }
+    .masthead .subtitle { font-size: 0.9rem; letter-spacing: 0.14em; color: var(--ink-soft); text-transform: uppercase; }
+    .menu-bar { background: var(--menu-bg); border-bottom: 1px solid var(--line); text-align: center; padding: 0.4rem 2vw; }
+    .menu-bar a { display: inline-block; padding: 0.4rem 0.9rem; font-size: 1rem; font-weight: 500; text-decoration: none; border-radius: 8px; }
+    .menu-bar a:hover { background: rgba(255, 253, 247, 0.75); }
+
+    main { flex: 1; padding: 1.4rem 5vw 2rem; display: flex; flex-direction: column; gap: 16px; }
+    .box { background: var(--box-bg); border: 1px solid var(--line); border-radius: 10px; padding: 1.4rem 1.6rem; }
+    .box h2 {
+      font-family: "Noto Serif KR", serif;
+      font-size: 1.3rem;
+      color: var(--green-dark);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.9rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .intro { color: var(--ink-soft); font-size: 0.98rem; }
+    .notice-card { scroll-margin-top: 16px; }
+    .notice-card h2 { margin-bottom: 1rem; }
+    .notice-card p { margin-top: 0.9rem; font-size: 1rem; line-height: 1.85; }
+    .notice-card p:first-of-type { margin-top: 0; }
+    .notice-action {
+      display: inline-block;
+      margin-top: 1.1rem;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.96rem;
+      font-weight: 700;
+      padding: 0.58rem 1.15rem;
+      border-radius: 8px;
+      transition: background 0.15s ease;
+    }
+    .notice-action:hover { background: var(--green-dark); }
+    .back-home { text-align: center; }
+    .back-home a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--green-dark);
+      padding: 0.55rem 1.3rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--box-bg);
+    }
+    .back-home a:hover { background: var(--menu-bg); }
+    footer {
+      background: var(--foot-bg);
+      border-top: 1px solid var(--line);
+      text-align: center;
+      padding: 1rem 4vw;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+  </style>
+</head>
+<body>
+<div class="site">
+  <header class="masthead">
+    <h1><a href="/">들뫼생태연구회</a></h1>
+    <p class="subtitle">Korean Birding Community</p>
+  </header>
+  <nav class="menu-bar" aria-label="주요 메뉴">
+    <a href="/">Home</a>
+    <a href="https://wooil1964.github.io/birdmap/">전국 탐조지도</a>
+    <a href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">네이버 카페</a>
+  </nav>
+
+  <main>
+    <section class="box">
+      <h2>들뫼생태연구회 공지사항</h2>
+      <p class="intro">전국 탐조지도 활용, 이달의 새 선정, 탐조 현장 예절과 관련한 주요 안내입니다.</p>
+    </section>
+
+    <section class="box notice-card" id="birdmap-guide">
+      <h2>전국 탐조지도 활용 안내</h2>
+      <p>전국 탐조지도는 들뫼생태연구회가 전국의 주요 탐조지를 한눈에 살펴볼 수 있도록 정리한 안내 지도입니다.</p>
+      <p>지도에서는 지역별 탐조지, 계절별 탐조 가능성, 대표 조류, 섬 탐조, 선상 탐조, 희귀조 관찰 가능 권역 등을 확인할 수 있습니다.</p>
+      <p>각 탐조지 팝업에서는 네이버지도, 카카오맵, Windy 기상 정보, eBird 정보, 관련 카페 자료로 이동할 수 있습니다.</p>
+      <p>탐조 전에는 현장 상황, 출입 가능 여부, 날씨, 조류의 민감도 등을 반드시 확인해 주시기 바랍니다.</p>
+      <p>특히 번식지, 월동지, 민감종 관찰지는 무리한 접근을 피하고, 위치 정보 공유에 신중해 주시기 바랍니다.</p>
+      <a class="notice-action" href="https://wooil1964.github.io/birdmap/">전국 탐조지도 보기</a>
+    </section>
+
+    <section class="box notice-card" id="monthly-bird">
+      <h2>이달의 새 선정 안내</h2>
+      <p>들뫼생태연구회는 매월 회원들이 올려주신 탐조 기록과 사진 가운데 많은 관심을 받은 작품을 중심으로 “이달의 새”를 선정합니다.</p>
+      <p>선정 기준은 좋아요 수를 우선으로 하며, 동률일 경우 조회수가 높은 작품을 선정합니다.</p>
+      <p>이달의 새는 회원들의 탐조 열정과 기록을 함께 나누기 위한 취지로 운영됩니다.</p>
+      <p>선정된 작품은 해당 월의 대표 기록으로 소개되며, 회원들의 탐조 활동을 격려하고 좋은 기록을 함께 공유하는 데 목적이 있습니다.</p>
+      <p>※ 세부 운영 방식은 카페 운영 상황에 따라 조정될 수 있습니다.</p>
+      <a class="notice-action" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">네이버 카페 보기</a>
+    </section>
+
+    <section class="box notice-card" id="field-ethics">
+      <h2>탐조 예절 캠페인 안내</h2>
+      <p>탐조는 새와 자연을 가까이에서 만나는 즐거운 활동이지만, 그만큼 현장 예절과 생태 윤리가 중요합니다.</p>
+      <p>새가 경계 행동을 보이거나 이동을 멈추는 경우에는 즉시 거리를 두어야 합니다. 둥지, 새끼, 번식 행동을 관찰할 때는 무리한 접근과 장시간 체류를 피해야 합니다.</p>
+      <p>촬영을 위해 소리를 크게 내거나, 먹이를 주거나, 식생을 훼손하거나, 플래시를 남용하는 행위는 삼가야 합니다.</p>
+      <p>탐조지는 우리만의 공간이 아니라 새가 살아가는 터전입니다. 조용히 관찰하고, 흔적을 남기지 않으며, 다른 탐조자와 지역 주민을 배려하는 태도가 필요합니다.</p>
+      <p>들뫼생태연구회는 새와 사람이 함께 공존하는 건강한 탐조 문화를 지향합니다.</p>
+      <a class="notice-action" href="charter.html">들뫼 헌장 보기</a>
+    </section>
+
+    <p class="back-home"><a href="/">← 홈으로 돌아가기</a></p>
+  </main>
+
+  <footer>© 2026 들뫼생태연구회 · Korean Birding Community · All rights reserved.</footer>
+</div>
+</body>
+</html>
