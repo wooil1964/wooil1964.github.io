@@ -464,7 +464,7 @@
         <h2>검색</h2>
         <form class="search-form" onsubmit="return dulmoeSearch(this)">
           <div class="search-scope" aria-label="검색 범위">통합검색</div>
-          <input type="search" name="q" placeholder="카페 글 검색" aria-label="검색어">
+          <input type="search" name="q" placeholder="카페글 검색" aria-label="검색어">
           <button type="submit" class="btn">검색</button>
         </form>
       </section>
@@ -566,8 +566,8 @@
   function dulmoeSearch(form) {
     var q = form.q.value.trim();
     if (!q) { return false; }
-    var innerUrl = '/ArticleSearchList.nhn?search.clubid=30520110&search.searchBy=0&search.query=' + encodeURIComponent(q);
-    var url = 'https://cafe.naver.com/withbirds?iframe_url=' + encodeURIComponent(innerUrl);
+    var searchQuery = q + ' 들뫼생태연구회';
+    var url = 'https://search.naver.com/search.naver?where=article&query=' + encodeURIComponent(searchQuery);
     window.open(url, '_blank', 'noopener');
     return false;
   }
