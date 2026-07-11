@@ -464,9 +464,8 @@
         <h2>검색</h2>
         <form class="search-form" onsubmit="return dulmoeSearch(this)">
           <div class="search-scope" aria-label="검색 범위">통합검색</div>
-          <input type="search" name="q" placeholder="탐조지·지역·종명 검색" aria-label="검색어">
+          <input type="search" name="q" placeholder="카페 글 검색" aria-label="검색어">
           <button type="submit" class="btn">검색</button>
-          <label><input type="checkbox" name="siteonly"> 홈페이지 내 검색</label>
         </form>
       </section>
     </aside>
@@ -566,10 +565,9 @@
 <script>
   function dulmoeSearch(form) {
     var q = form.q.value.trim();
-    if (!q) { form.q.focus(); return false; }
-    // 홈페이지 내 검색 체크 시 이 사이트로 한정해 검색합니다.
-    var query = form.siteonly.checked ? q + ' site:wooil1964.github.io' : q;
-    window.open('https://search.naver.com/search.naver?query=' + encodeURIComponent(query), '_blank', 'noopener');
+    if (!q) { return false; }
+    var url = 'https://cafe.naver.com/ca-fe/cafes/30520110/articles/search?query=' + encodeURIComponent(q);
+    window.open(url, '_blank', 'noopener');
     return false;
   }
 </script>
