@@ -566,7 +566,7 @@
   function dulmoeSearch(form) {
     var q = form.q.value.trim();
     if (!q) { return false; }
-    var url = 'https://cafe.naver.com/ca-fe/cafes/30520110/articles/search?query=' + encodeURIComponent(q);
+    var url = 'https://cafe.naver.com/ArticleSearchList.nhn?search.clubid=30520110&search.searchBy=0&search.query=' + encodeURIComponent(q);
     window.open(url, '_blank', 'noopener');
     return false;
   }
