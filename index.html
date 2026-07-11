@@ -245,7 +245,7 @@
 
     /* 왼쪽: 검색 */
     .search-form { display: flex; flex-direction: column; gap: 0.5rem; }
-    .search-form select,
+    .search-form .search-scope,
     .search-form input[type="search"] {
       width: 100%;
       font-size: 0.95rem;
@@ -255,6 +255,9 @@
       border-radius: 8px;
       background: #fff;
       color: var(--ink);
+    }
+    .search-form .search-scope {
+      line-height: 1.45;
     }
     .search-form label {
       font-size: 0.88rem;
@@ -460,10 +463,8 @@
       <section class="box">
         <h2>검색</h2>
         <form class="search-form" onsubmit="return dulmoeSearch(this)">
-          <select name="scope" aria-label="검색 범위">
-            <option value="all">통합검색</option>
-          </select>
-          <input type="search" name="q" placeholder="검색어를 입력하세요" aria-label="검색어">
+          <div class="search-scope" aria-label="검색 범위">통합검색</div>
+          <input type="search" name="q" placeholder="탐조지·지역·종명 검색" aria-label="검색어">
           <button type="submit" class="btn">검색</button>
           <label><input type="checkbox" name="siteonly"> 홈페이지 내 검색</label>
         </form>
