@@ -165,6 +165,30 @@
     }
     .btn:hover { background: var(--green-dark); }
     .btn-block { display: block; text-align: center; margin-top: 0.7rem; }
+    .pastel-a {
+      background: #D9EAD3;
+      color: #2F4F35;
+      border: 1px solid #BFD6B8;
+    }
+    .pastel-a:hover { background: #C9DFC2; }
+    .pastel-b {
+      background: #DDE7F2;
+      color: #2F455C;
+      border: 1px solid #C2D4E6;
+    }
+    .pastel-b:hover { background: #CBDCEB; }
+    .pastel-c {
+      background: #F3E5C8;
+      color: #5C4A2F;
+      border: 1px solid #E2CFA9;
+    }
+    .pastel-c:hover { background: #E9D7B6; }
+    .pastel-d {
+      background: #E8DCEF;
+      color: #4B365A;
+      border: 1px solid #D5C2E0;
+    }
+    .pastel-d:hover { background: #DCCDE7; }
 
     /* 왼쪽: 공지사항 */
     .notice-list { list-style: none; }
@@ -202,14 +226,22 @@
       text-align: center;
       text-decoration: none;
       font-size: 0.97rem;
-      font-weight: 500;
+      font-weight: 700;
       padding: 0.5rem 0.4rem;
       background: var(--body-bg);
       border: 1px solid var(--line);
       border-radius: 8px;
-      transition: background 0.15s ease;
+      transition: background 0.15s ease, border-color 0.15s ease;
     }
     .quick-list a:hover { background: var(--menu-bg); }
+    .quick-list a.pastel-a { background: #D9EAD3; color: #2F4F35; border-color: #BFD6B8; }
+    .quick-list a.pastel-a:hover { background: #C9DFC2; }
+    .quick-list a.pastel-b { background: #DDE7F2; color: #2F455C; border-color: #C2D4E6; }
+    .quick-list a.pastel-b:hover { background: #CBDCEB; }
+    .quick-list a.pastel-c { background: #F3E5C8; color: #5C4A2F; border-color: #E2CFA9; }
+    .quick-list a.pastel-c:hover { background: #E9D7B6; }
+    .quick-list a.pastel-d { background: #E8DCEF; color: #4B365A; border-color: #D5C2E0; }
+    .quick-list a.pastel-d:hover { background: #DCCDE7; }
 
     /* 왼쪽: 검색 */
     .search-form { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -267,12 +299,6 @@
       color: var(--ink-soft);
     }
 
-    .archive .archive-buttons {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0.55rem;
-    }
-    .archive .archive-buttons .btn { text-align: center; padding: 0.6rem 0.3rem; }
     /* 월별새: 접이식 소형 박스 */
     details.months { padding: 0.65rem 1.05rem; }
     details.months summary {
@@ -391,14 +417,10 @@
   <nav class="menu-bar" aria-label="주요 메뉴">
     <ul>
       <li><a href="/">Home</a></li>
-      <li><a href="https://wooil1964.github.io/birdmap/">전국 탐조지도</a></li>
-      <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/20?viewType=L" target="_blank" rel="noopener">심층탐구</a></li>
-      <!-- TODO: 탐조지 소식 게시판 URL 확정 시 교체 (현재 카페 대문) -->
-      <li><a href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">탐조지 소식</a></li>
-      <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/21?viewType=L" target="_blank" rel="noopener">새이름이 궁금해요</a></li>
-      <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/21?viewType=L" target="_blank" rel="noopener">함께 탐조 가요</a></li>
-      <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/1?viewType=L" target="_blank" rel="noopener">속닥속닥 이야기나누기</a></li>
-      <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/23?viewType=L" target="_blank" rel="noopener">외국의 새</a></li>
+      <li><a href="about.html">들뫼 소개</a></li>
+      <li><a href="https://wooil1964.github.io/birdmap/" target="_blank" rel="noopener">전국 탐조지도</a></li>
+      <li><a href="notices.html">공지사항</a></li>
+      <li><a href="#monthly-birds">월별새</a></li>
       <li><a href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">네이버 카페</a></li>
     </ul>
   </nav>
@@ -420,9 +442,10 @@
       <section class="box">
         <h2>바로가기</h2>
         <ul class="quick-list">
-          <li><a href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">네이버 카페</a></li>
-          <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/1?viewType=L" target="_blank" rel="noopener">속닥속닥 이야기나누기</a></li>
-          <li><a href="https://cafe.naver.com/f-e/cafes/30520110/menus/23?viewType=L" target="_blank" rel="noopener">외국의 새</a></li>
+          <li><a class="pastel-a" href="https://wooil1964.github.io/birdmap/" target="_blank" rel="noopener">전국 탐조지도</a></li>
+          <li><a class="pastel-b" href="https://cafe.naver.com/f-e/cafes/30520110/menus/20?viewType=L" target="_blank" rel="noopener">심층탐구</a></li>
+          <li><a class="pastel-c" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">탐조지 소식</a></li>
+          <li><a class="pastel-d" href="https://cafe.naver.com/f-e/cafes/30520110/menus/21?viewType=L" target="_blank" rel="noopener">함께 탐조 가요</a></li>
         </ul>
       </section>
 
@@ -452,18 +475,7 @@
         </figure>
       </div>
 
-      <div class="box archive">
-        <h2>들뫼 탐조 자료실</h2>
-        <div class="archive-buttons">
-          <a class="btn" href="https://wooil1964.github.io/birdmap/">전국 탐조지도</a>
-          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/20?viewType=L" target="_blank" rel="noopener">심층탐구</a>
-          <!-- TODO: 탐조지 소식 게시판 URL 확정 시 교체 (현재 카페 대문) -->
-          <a class="btn" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">탐조지 소식</a>
-          <a class="btn" href="https://cafe.naver.com/f-e/cafes/30520110/menus/21?viewType=L" target="_blank" rel="noopener">함께 탐조 가요</a>
-        </div>
-      </div>
-
-      <details class="box months">
+      <details class="box months" id="monthly-birds">
         <summary>
           <span class="sum-title">월별새 보기</span>
           <span class="sum-desc">1월부터 12월까지 회원들이 선정한 월별 새 기록을 확인합니다.</span>
@@ -488,22 +500,22 @@
         <div class="box info-card">
           <h3>회장 인사말</h3>
           <p>들뫼생태연구회가 걸어가는 방향과 탐조 철학을 전합니다.</p>
-          <a class="btn btn-block" href="greeting.html">인사말 보기</a>
+          <a class="btn btn-block pastel-a" href="greeting.html">인사말 보기</a>
         </div>
         <div class="box info-card">
           <h3>들뫼생태연구회 헌장</h3>
           <p>연구 윤리, 기록 원칙, 현장 행동지침을 담은 들뫼의 기본 원칙입니다.</p>
-          <a class="btn btn-block" href="charter.html">헌장 보기</a>
+          <a class="btn btn-block pastel-b" href="charter.html">헌장 보기</a>
         </div>
         <div class="box info-card">
           <h3>속닥속닥 이야기나누기</h3>
           <p>회원들의 일상 이야기와 탐조 이야기를 편하게 나누는 공간입니다.</p>
-          <a class="btn btn-block" href="https://cafe.naver.com/f-e/cafes/30520110/menus/1?viewType=L" target="_blank" rel="noopener">이야기 보기</a>
+          <a class="btn btn-block pastel-c" href="https://cafe.naver.com/f-e/cafes/30520110/menus/1?viewType=L" target="_blank" rel="noopener">이야기 보기</a>
         </div>
         <div class="box info-card">
           <h3>네이버 카페</h3>
           <p>회원 글쓰기, 댓글, 사진, 탐조기는 네이버 카페에서 이어갑니다.</p>
-          <a class="btn btn-block" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">카페 바로가기</a>
+          <a class="btn btn-block pastel-d" href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">카페 바로가기</a>
         </div>
       </div>
     </section>
