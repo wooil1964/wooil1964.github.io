@@ -83,16 +83,19 @@
       border-left: 4px solid var(--green);
       border-radius: 10px;
       padding: 1rem 1.15rem;
+      display: flex;
+      flex-direction: column;
     }
-    .committee-card p {
+    .committee-card p:not(.committee-sign) {
       margin-top: 0.55rem;
       text-align: left;
       font-size: 0.98rem;
       line-height: 1.85;
     }
     .committee-card p:first-child { margin-top: 0; }
-    .committee-sign {
-      margin-top: 1rem;
+    .committee-card p.committee-sign {
+      margin: 1rem 0 0;
+      align-self: flex-end;
       text-align: right;
       line-height: 1.65;
     }
