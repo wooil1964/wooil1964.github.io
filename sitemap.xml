@@ -31,6 +31,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://wooil1964.github.io/bird-study/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://wooil1964.github.io/notices.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

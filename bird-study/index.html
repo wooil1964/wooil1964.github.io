@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조류 심층 탐구실 | 들뫼생태연구회</title>
+  <meta name="description" content="들뫼생태연구회 카페 심층탐구에서 다뤄온 조류 이야기를 종별 정리본으로 모아둔 공간입니다.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕊️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --page-bg: #D9E1D8;
+      --body-bg: #F5F7F2;
+      --box-bg: #FFFDF7;
+      --line: #A7B29F;
+      --head-bg: #D7DED0;
+      --menu-bg: #C7D3C2;
+      --foot-bg: #D6DDD1;
+      --ink: #2C3A2E;
+      --ink-soft: #55624F;
+      --green: #4F6A54;
+      --green-dark: #3D5442;
+      --muted-panel: #EEF2EA;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--page-bg);
+      word-break: keep-all;
+    }
+    a { color: inherit; }
+    .site {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--body-bg);
+      border-left: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .masthead {
+      background: var(--head-bg);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+      padding: 1.2rem 5vw 1rem;
+    }
+    .masthead h1 {
+      font-family: "Noto Serif KR", serif;
+      font-size: 1.7rem;
+      letter-spacing: 0.06em;
+    }
+    .masthead h1 a { text-decoration: none; }
+    .masthead .subtitle {
+      font-size: 0.9rem;
+      letter-spacing: 0.14em;
+      color: var(--ink-soft);
+      text-transform: uppercase;
+    }
+    .menu-bar {
+      background: var(--menu-bg);
+      border-bottom: 1px solid var(--line);
+      text-align: center;
+      padding: 0.4rem 2vw;
+    }
+    .menu-bar a {
+      display: inline-block;
+      padding: 0.4rem 0.9rem;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .menu-bar a:hover,
+    .menu-bar a[aria-current="page"] {
+      background: rgba(255, 253, 247, 0.75);
+    }
+    main {
+      flex: 1;
+      padding: 1.4rem 5vw 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .box {
+      background: var(--box-bg);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.4rem 1.6rem;
+    }
+    .box h2 {
+      font-family: "Noto Serif KR", serif;
+      font-size: 1.45rem;
+      color: var(--green-dark);
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.9rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .intro {
+      color: var(--ink-soft);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    .search-box label {
+      display: block;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 0.55rem;
+    }
+    .search-box input {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      padding: 0.65rem 0.8rem;
+    }
+    .search-box input:focus {
+      outline: 3px solid rgba(79, 106, 84, 0.2);
+      border-color: var(--green);
+    }
+    .search-status {
+      margin-top: 0.6rem;
+      color: var(--ink-soft);
+      font-size: 0.94rem;
+    }
+    .study-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .study-card {
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--green);
+      border-radius: 10px;
+      background: var(--box-bg);
+      padding: 1.3rem 1.5rem;
+    }
+    .study-card[hidden] { display: none; }
+    .study-card h3 {
+      font-family: "Noto Serif KR", serif;
+      font-size: 1.22rem;
+      color: var(--green-dark);
+      line-height: 1.5;
+    }
+    .keywords {
+      margin-top: 0.75rem;
+      padding: 0.65rem 0.8rem;
+      border-radius: 8px;
+      background: var(--muted-panel);
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+    .keywords b,
+    .summary b,
+    .source b {
+      color: var(--green-dark);
+    }
+    .summary {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+    }
+    .summary p {
+      margin-top: 0.55rem;
+      line-height: 1.85;
+    }
+    .summary p:first-child { margin-top: 0; }
+    .source {
+      margin-top: 1rem;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+    .empty-message {
+      background: var(--box-bg);
+      border: 1px dashed var(--line);
+      border-radius: 10px;
+      color: var(--ink-soft);
+      padding: 1.2rem 1.4rem;
+    }
+    .empty-message[hidden] { display: none; }
+    .back-home { text-align: center; }
+    .back-home a {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--green-dark);
+      padding: 0.55rem 1.3rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--box-bg);
+    }
+    .back-home a:hover { background: var(--menu-bg); }
+    footer {
+      background: var(--foot-bg);
+      border-top: 1px solid var(--line);
+      text-align: center;
+      padding: 1rem 4vw;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+    @media (max-width: 430px) {
+      body { font-size: 16px; }
+      .site { border-left: none; border-right: none; }
+      .masthead { padding: 1rem 4vw 0.9rem; }
+      .masthead h1 { font-size: 1.45rem; }
+      .masthead .subtitle { font-size: 0.78rem; }
+      .menu-bar { padding: 0.35rem 1vw; }
+      .menu-bar a {
+        padding: 0.42rem 0.55rem;
+        font-size: 0.94rem;
+      }
+      main { padding: 1rem 3.5vw 1.5rem; }
+      .box,
+      .study-card {
+        padding: 1.05rem 1rem;
+        border-radius: 8px;
+      }
+      .box h2 { font-size: 1.25rem; }
+      .study-card h3 { font-size: 1.12rem; }
+      .search-box input { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="site">
+  <header class="masthead">
+    <h1><a href="/">들뫼생태연구회</a></h1>
+    <p class="subtitle">Korean Birding Community</p>
+  </header>
+
+  <nav class="menu-bar" aria-label="주요 메뉴">
+    <a href="../">Home</a>
+    <a href="../about.html">들뫼 소개</a>
+    <a href="https://wooil1964.github.io/birdmap/">전국 탐조지도</a>
+    <a href="./" aria-current="page">조류 심층 탐구실</a>
+    <a href="https://cafe.naver.com/withbirds" target="_blank" rel="noopener">네이버 카페</a>
+  </nav>
+
+  <main>
+    <section class="box">
+      <h2>조류 심층 탐구실</h2>
+      <p class="intro">들뫼생태연구회 카페 ‘심층탐구’에서 다뤄온 조류 이야기를 종별 정리본으로 모아둔 공간입니다.</p>
+      <p class="intro">종명이나 키워드를 검색해 필요한 정리본을 찾을 수 있습니다.</p>
+    </section>
+
+    <section class="box search-box" aria-label="정리본 검색">
+      <label for="study-search">정리본 검색</label>
+      <input id="study-search" type="search" placeholder="종명 또는 키워드를 입력하세요. 예: 까막딱다구리, 도요, 맹금, 산림" autocomplete="off">
+      <p class="search-status" id="search-status" aria-live="polite">전체 정리본 2개를 표시하고 있습니다.</p>
+    </section>
+
+    <section class="study-list" id="study-list" aria-label="조류 심층 탐구 정리본 목록">
+      <article class="study-card" data-species="까막딱다구리" data-keywords="까막딱다구리, 딱다구리, 산림성 조류, 텃새, 나무구멍">
+        <h3>까막딱다구리</h3>
+        <p class="keywords"><b>키워드:</b> 까막딱다구리, 딱다구리, 산림성 조류, 텃새, 나무구멍</p>
+        <div class="summary">
+          <p><b>정리본 본문:</b> 추후 입력 예정</p>
+        </div>
+        <p class="source"><b>카페 원문 링크:</b> 추후 입력 예정</p>
+      </article>
+
+      <article class="study-card" data-species="넓적부리도요" data-keywords="넓적부리도요, 도요류, 희귀조, 갯벌, 이동기">
+        <h3>넓적부리도요</h3>
+        <p class="keywords"><b>키워드:</b> 넓적부리도요, 도요류, 희귀조, 갯벌, 이동기</p>
+        <div class="summary">
+          <p><b>정리본 본문:</b> 추후 입력 예정</p>
+        </div>
+        <p class="source"><b>카페 원문 링크:</b> 추후 입력 예정</p>
+      </article>
+    </section>
+
+    <p class="empty-message" id="empty-message" hidden>검색어와 일치하는 정리본이 없습니다.</p>
+
+    <p class="back-home"><a href="../">← 홈으로 돌아가기</a></p>
+  </main>
+
+  <footer>© 2026 들뫼생태연구회 · Korean Birding Community · All rights reserved.</footer>
+</div>
+
+<script>
+  const searchInput = document.getElementById("study-search");
+  const cards = Array.from(document.querySelectorAll(".study-card"));
+  const statusText = document.getElementById("search-status");
+  const emptyMessage = document.getElementById("empty-message");
+
+  function normalize(text) {
+    return text.trim().toLowerCase();
+  }
+
+  function filterStudies() {
+    const query = normalize(searchInput.value);
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const searchableText = normalize([
+        card.dataset.species,
+        card.dataset.keywords,
+        card.textContent
+      ].join(" "));
+      const isMatch = query === "" || searchableText.includes(query);
+
+      card.hidden = !isMatch;
+      if (isMatch) visibleCount += 1;
+    });
+
+    emptyMessage.hidden = visibleCount !== 0;
+    statusText.textContent = query === ""
+      ? `전체 정리본 ${cards.length}개를 표시하고 있습니다.`
+      : `검색 결과 ${visibleCount}개를 표시하고 있습니다.`;
+  }
+
+  searchInput.addEventListener("input", filterStudies);
+  searchInput.addEventListener("search", filterStudies);
+</script>
+</body>
+</html>
