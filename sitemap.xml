@@ -36,6 +36,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://wooil1964.github.io/bird-study/species/honey-buzzard.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://wooil1964.github.io/bird-study/species/chinese-crested-tern.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://wooil1964.github.io/notices.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
